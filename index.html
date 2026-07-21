@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מנהל פרויקט נתיבי הכרמל</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0E2A4A">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="נתיבי הכרמל">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Heebo:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -172,6 +179,9 @@
   .c1{ --accent:#1F5FA8; }
   .c2{ --accent:#2E8B6F; }
   .c3{ --accent:#B98A2E; }
+  .c4{ --accent:#8B4FB8; }
+  .c5{ --accent:#C4574A; }
+  .c6{ --accent:#3A8FA0; }
 
   .login-screen{
     position:fixed;
@@ -374,6 +384,33 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5l7 7-7 7M21 12H3"/></svg>
         </span>
       </a>
+
+      <a class="card c4" href="https://manmash.com/" onclick="openTool(event,'https://manmash.com/','אתר מנמש')">
+        <span class="tag">כלי 04</span>
+        <h2>אתר מנמש</h2>
+        <p>מערכת מנמש</p>
+        <span class="go">כניסה
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5l7 7-7 7M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="card c5" href="https://hadiferro0-cyber.github.io/sedor-toller/index.html" onclick="openTool(event,'https://hadiferro0-cyber.github.io/sedor-toller/index.html','סידור עבודה טולרים')">
+        <span class="tag">כלי 05</span>
+        <h2>סידור עבודה טולרים</h2>
+        <p>ניהול סידור עבודה - טולרים</p>
+        <span class="go">כניסה
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5l7 7-7 7M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="card c6" href="https://hadiferro0-cyber.github.io/carmel-tunel/" onclick="openTool(event,'https://hadiferro0-cyber.github.io/carmel-tunel/','מערכת איוש עמדות')">
+        <span class="tag">כלי 06</span>
+        <h2>מערכת איוש עמדות</h2>
+        <p>ניהול איוש עמדות</p>
+        <span class="go">כניסה
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5l7 7-7 7M21 12H3"/></svg>
+        </span>
+      </a>
     </div>
   </main>
 
@@ -424,6 +461,12 @@
       errorMsg.hidden = false;
     }
     return false;
+  }
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js').catch(() => {});
+    });
   }
 </script>
 </body>
